@@ -1,0 +1,295 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>wasdwasd0105&#39;s home</title>
+<meta name="description" content="" />
+<link rel="shortcut icon" href="https://wasdwasd0105.github.io/favicon.ico?v=1640358601965">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+<link rel="stylesheet" href="https://wasdwasd0105.github.io/styles/main.css">
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main px-4 flex flex-col lg:flex-row">
+      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+  <div class="lg:sticky top-0">
+    <div class="sidebar-content">
+      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
+        <i class="ri-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
+        <a href="https://wasdwasd0105.github.io">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://wasdwasd0105.github.io/images/avatar.png?v=1640358601965" alt="">
+        </a>
+        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">wasdwasd0105&#39;s home</h1>
+      </div>
+      
+        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
+          <p class="my-4 text-gray-600 font-light hidden lg:block">
+            文章目录
+          </p>
+          <div class="toc-container hidden lg:block">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#introduction">Introduction:</a></li>
+<li><a href="#background-knowledge">Background knowledge:</a></li>
+<li><a href="#warning">Warning</a></li>
+<li><a href="#requirements">Requirements:</a></li>
+<li><a href="#steps">Steps</a>
+<ul>
+<li><a href="#1-install-the-sim-card-with-the-unlocker">(1) Install the SIM card with the unlocker</a></li>
+<li><a href="#2-choose-a-good-mvno-to-fake">(2) Choose a good MVNO to fake</a></li>
+<li><a href="#3-set-up-the-unlocker-to-iphone">(3) Set up the unlocker to iPhone</a></li>
+<li><a href="#optional-for-v139">(Optional) for V1.39</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="menu-container">
+  <i class="ri-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
+  <div>
+    
+      
+        <a href="/" class="menu" style="animation-delay: 0s">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" style="animation-delay: 0.2s">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" style="animation-delay: 0.4s">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" style="animation-delay: 0.6000000000000001s">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="site-footer">
+    <div class="py-4 text-gray-700">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></div>
+    <a class="rss" href="https://wasdwasd0105.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+<div class="mask" onclick="closeMenu()">
+</div>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
+        <h1 class="text-3xl font-bold lg:mt-16">Enable iPhone’s 5G &amp; HD voice on Google Fi and other T-mobile MVNOs</h1>
+        <div class="text-sm text-gray-700 lg:my-8">
+          2021-12-17 / 5 min read
+        </div>
+        
+        <div class="post-content yue">
+          <h2 id="introduction">Introduction:</h2>
+<p>The 5G connection is a major advantage for the new iPhone 12 and 13 models and encourages the users to pay for it. However, if the users use some MVNO based carriers such as Google Fi, they will only have LTE(4G) connection, and they may not switch to 5G connection by the limitation of carrier settings. In this guide, I will use Google Fi to demonstrate one solution to use a SIM card unlocker such as “Heicard” to force enable 5G on unsupported carriers with iPhone.</p>
+<figure data-type="image" tabindex="1"><img src="https://wasdwasd0105.github.io/post-images/1640347753908.jpg" alt="figure 1" loading="lazy"></figure>
+<h2 id="background-knowledge">Background knowledge:</h2>
+<p>Usually, MVNO carriers do not have their mobile network, and they will use the major carriers such as AT&amp;T, T-Mobile, and Verizon for resale. And for iPhones, many carriers include MVNOs are &quot;registered&quot; inside the IOS, and every &quot;whitelisted&quot; carrier has a unique configuration file called &quot;carrier bundle.&quot;  The carrier bundle contains the most necessary settings such as Apps, MMS, etc. Also, it has the permission to enable advanced options such as a 5G switch, Volte(HD voice), WiFi calling, and hotspot. For example, a &quot;whitelisted&quot; carrier contains all the permissions we want to have.<br>
+<img src="https://wasdwasd0105.github.io/post-images/1640352249484.png" alt="" loading="lazy"></p>
+<p>However, if a carrier is not &quot;whitelisted,&quot; the IOS will load a default carrier bundle, and for the unlisted T-mobile based carrier such as Google Fi, it will use the file called called &quot;TMobile_MVNO_US.bundle.&quot; However, its permission list is limited and more simple than the whitelisted ones<br>
+<img src="https://wasdwasd0105.github.io/post-images/1640352375581.png" alt="" loading="lazy"></p>
+<p>In this guide, we will modify the GIDs that the SIM card sends to the iPhone using the unlocker. GID is called group identifier and it has two values: GID1 and GID2. IOS can use GIDs to identify which MVNOs you are using and load its carrier bundle. We want to change the GIDs to a &quot;whitelisted&quot; MVNO and then load its full functional options.</p>
+<h2 id="warning">Warning</h2>
+<p>This method will not modify the iPhone system, however, I don't know if the unlocker contains the malware. Also, incorrect installing the SIM card locker may damage the iPhone and the SIM card. So, <strong>the users should take their risks</strong>.</p>
+<h2 id="requirements">Requirements:</h2>
+<ol>
+<li>An iPhone support the 5G connection</li>
+<li>A <strong>physical SIM</strong> card from the carrier (eSIM card doesn't support)</li>
+<li>A SIM card unlocker support modifying GIDs: You can search “Heicard” on eBay or Amazon to get one</li>
+<li>An Android Phone if the default number is not working</li>
+</ol>
+<h2 id="steps">Steps</h2>
+<h3 id="1-install-the-sim-card-with-the-unlocker">(1) Install the SIM card with the unlocker</h3>
+<p>Attach the SIM card unlocker with the SIM card, then plug them into the iPhone. You can also visit &quot;https://www.youtube.com/watch?v=VXGp6hxhQs4&quot; for video guide.</p>
+<h3 id="2-choose-a-good-mvno-to-fake">(2) Choose a good MVNO to fake</h3>
+<p>You can choose a T-mobile-based MVNO on the whitelist. However, you are not allowed to modify the APN after applying the whitelisted MVNO. Google Fi's APN is h2g2, but no carrier has the same APN in the whitelist. Luckily, I found most of the APNs in the MVNOs can be compatible with Fi. I recommend faking the carrier with APN &quot;wholesale&quot;, which is the default one for T-mobile MVNO. I give you the list example for all the whitelisted T-mobile MVNO carriers:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Carrier</th>
+<th style="text-align:center">APN</th>
+<th style="text-align:center">GID1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">UltraMint</td>
+<td style="text-align:center">wholesale</td>
+<td style="text-align:center">4153</td>
+</tr>
+<tr>
+<td style="text-align:center">Boost</td>
+<td style="text-align:center">boost.data</td>
+<td style="text-align:center">6230</td>
+</tr>
+<tr>
+<td style="text-align:center">TFW</td>
+<td style="text-align:center">alpha</td>
+<td style="text-align:center">DE</td>
+</tr>
+<tr>
+<td style="text-align:center">Ting</td>
+<td style="text-align:center">wholesale</td>
+<td style="text-align:center">6135</td>
+</tr>
+<tr>
+<td style="text-align:center">CC</td>
+<td style="text-align:center">wholesale</td>
+<td style="text-align:center">2AC9</td>
+</tr>
+<tr>
+<td style="text-align:center">Metro</td>
+<td style="text-align:center">beta</td>
+<td style="text-align:center">6D</td>
+</tr>
+<tr>
+<td style="text-align:center">T-mobile</td>
+<td style="text-align:center">fast.t-mobile.com</td>
+<td style="text-align:center">54</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-set-up-the-unlocker-to-iphone">(3) Set up the unlocker to iPhone</h3>
+<p>The unlocker program will automatically start. First click “Set IMSI Manual Unlock” -&gt; “input imsi”. In the input box, type the IMSI &quot;3102609&quot; and click “send”. Then in the GID1, input one value that you choose in the list. Then, also click send and do not input in the GID2 and click send, at last, the settings are configured, and click “accept” in the last window.<br>
+<img src="https://wasdwasd0105.github.io/post-images/1640357508740.png" alt="" loading="lazy"></p>
+<h3 id="optional-for-v139">(Optional) for V1.39</h3>
+<p>If you use &quot;Heicard&quot; with 1.39, there is an extra step to set up. Go to Settings APP -&gt; &quot;Cellular&quot; -&gt; &quot;SIM applications&quot;, then choose &quot;fix 4G hotspot&quot; then input &quot;3102609&quot; and send.</p>
+
+        </div>
+
+        
+
+
+        <div class="flex justify-between py-8">
+          
+
+          
+        </div>
+
+        
+
+      </div>
+    </div>
+
+    <script src="https://wasdwasd0105.github.io/media/prism.js"></script>  
+<script>
+
+Prism.highlightAll()
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage)
+    })
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
+const menuContainer = document.querySelector('.menu-container')
+const menus = document.querySelectorAll('.menu-container .menu')
+const mask = document.querySelector('.mask')
+const contentWrapper = document.querySelector('.content-wrapper')
+const latestArticle = document.querySelector('.latest-article')
+const readMore = document.querySelector('.read-more')
+const indexPage = document.querySelector('.index-page')
+
+const isHome = location.pathname === '/'
+if (latestArticle) {
+  latestArticle.style.display = isHome ? 'block' : 'none'
+  readMore.style.display = isHome ? 'block' : 'none'
+  indexPage.style.display = isHome ? 'none' : 'block'
+}
+
+const openMenu = () => {
+  menuContainer.classList.add('open')
+  menus.forEach(menu => {
+    menu.classList.add('animated', 'fadeInLeft')
+  })
+  mask.classList.add('open')
+  contentWrapper.classList.add('is-second')
+}
+
+const closeMenu = () => {
+  menuContainer.classList.remove('open')
+  menus.forEach(menu => {
+    menu.classList.remove('animated', 'fadeInLeft')
+  })
+  mask.classList.remove('open')
+  contentWrapper.classList.remove('is-second')
+}
+</script>
+  
+  </body>
+</html>
