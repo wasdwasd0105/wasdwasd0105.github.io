@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wasdwasd0105.github.io</id>
     <title>wasdwasd0105&apos;s home</title>
-    <updated>2021-12-24T15:10:11.129Z</updated>
+    <updated>2021-12-24T15:35:46.497Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wasdwasd0105.github.io"/>
     <link rel="self" href="https://wasdwasd0105.github.io/atom.xml"/>
@@ -11,22 +11,22 @@
     <rights>All rights reserved 2021, wasdwasd0105&apos;s home</rights>
     <entry>
         <title type="html"><![CDATA[Enable iPhone’s 5G & HD voice on Google Fi and other T-mobile MVNOs]]></title>
-        <id>https://wasdwasd0105.github.io/post/enable-iphones-5g-and-hd-voice-on-google-fi-and-other-t-mobile-mvnos/</id>
-        <link href="https://wasdwasd0105.github.io/post/enable-iphones-5g-and-hd-voice-on-google-fi-and-other-t-mobile-mvnos/">
+        <id>https://wasdwasd0105.github.io/post/google-fi-on-iphone-5g/</id>
+        <link href="https://wasdwasd0105.github.io/post/google-fi-on-iphone-5g/">
         </link>
-        <updated>2021-12-17T19:56:14.000Z</updated>
+        <updated>2021-12-23T23:15:30.000Z</updated>
         <content type="html"><![CDATA[<h2 id="introduction">Introduction:</h2>
-<p>The 5G connection is a major advantage for the new iPhone 12 and 13 models and encourages the users to pay for it. However, if the users use some MVNO based carriers such as Google Fi, they will only have LTE(4G) connection, and they may not switch to 5G connection by the limitation of carrier settings. In this guide, I will use Google Fi to demonstrate one solution to use a SIM card unlocker such as “Heicard” to force enable 5G on unsupported carriers with iPhone.</p>
-<figure data-type="image" tabindex="1"><img src="https://wasdwasd0105.github.io/post-images/1640347753908.jpg" alt="figure 1" loading="lazy"></figure>
-<h2 id="background-knowledge">Background knowledge:</h2>
-<p>Usually, MVNO carriers do not have their mobile network, and they will use the major carriers such as AT&amp;T, T-Mobile, and Verizon for resale. And for iPhones, many carriers include MVNOs are &quot;registered&quot; inside the IOS, and every &quot;whitelisted&quot; carrier has a unique configuration file called &quot;carrier bundle.&quot;  The carrier bundle contains the most necessary settings such as Apps, MMS, etc. Also, it has the permission to enable advanced options such as a 5G switch, Volte(HD voice), WiFi calling, and hotspot. For example, a &quot;whitelisted&quot; carrier contains all the permissions we want to have.<br>
-<img src="https://wasdwasd0105.github.io/post-images/1640352249484.png" alt="" loading="lazy"></p>
-<p>However, if a carrier is not &quot;whitelisted,&quot; the IOS will load a default carrier bundle, and for the unlisted T-mobile based carrier such as Google Fi, it will use the file called called &quot;TMobile_MVNO_US.bundle.&quot; However, its permission list is limited and more simple than the whitelisted ones<br>
-<img src="https://wasdwasd0105.github.io/post-images/1640352375581.png" alt="" loading="lazy"></p>
+<p>The 5G connection is a major advantage for the new iPhone 12 and 13 models and encourages the users to pay for it. However, if the users use some MVNO based carriers such as Google Fi, they will only have LTE(4G) connection, and they may not switch to 5G connection by the limitation of carrier settings. In this guide, I will use Google Fi to demonstrate one solution to use a SIM card unlocker such as “Heicard” to force enable 5G on unsupported carriers with iPhone.<br>
+<img src="https://wasdwasd0105.github.io/post-images/1640359184122.jpg" alt="" loading="lazy"></p>
+<h2 id="background-knowledge">Background knowledge</h2>
+<p>Usually, MVNO carriers do not have their mobile network, and they will use the major carriers such as AT&amp;T, T-Mobile, and Verizon for resale. And for iPhones, many carriers include MVNOs are &quot;registered&quot; inside the IOS, and every &quot;whitelisted&quot; carrier has a unique configuration file called &quot;carrier bundle.&quot; The carrier bundle contains the most necessary settings such as Apps, MMS, etc. Also, it has the permission to enable advanced options such as a 5G switch, Volte(HD voice), WiFi calling, and hotspot. For example, a &quot;whitelisted&quot; carrier contains all the permissions we want to have.<br>
+<img src="https://wasdwasd0105.github.io/post-images/1640359232127.png" alt="" loading="lazy"></p>
+<p>However, if a carrier is not &quot;whitelisted,&quot; the IOS will load a default carrier bundle, and for the unlisted T-mobile based carrier such as Google Fi, it will use the file called called &quot;TMobile_MVNO_US.bundle.&quot; However, its permission list is limited and more simple than the whitelisted ones.<br>
+<img src="https://wasdwasd0105.github.io/post-images/1640359253893.png" alt="" loading="lazy"></p>
 <p>In this guide, we will modify the GIDs that the SIM card sends to the iPhone using the unlocker. GID is called group identifier and it has two values: GID1 and GID2. IOS can use GIDs to identify which MVNOs you are using and load its carrier bundle. We want to change the GIDs to a &quot;whitelisted&quot; MVNO and then load its full functional options.</p>
 <h2 id="warning">Warning</h2>
 <p>This method will not modify the iPhone system, however, I don't know if the unlocker contains the malware. Also, incorrect installing the SIM card locker may damage the iPhone and the SIM card. So, <strong>the users should take their risks</strong>.</p>
-<h2 id="requirements">Requirements:</h2>
+<h2 id="requirements">Requirements</h2>
 <ol>
 <li>An iPhone support the 5G connection</li>
 <li>A <strong>physical SIM</strong> card from the carrier (eSIM card doesn't support)</li>
@@ -35,7 +35,7 @@
 </ol>
 <h2 id="steps">Steps</h2>
 <h3 id="1-install-the-sim-card-with-the-unlocker">(1) Install the SIM card with the unlocker</h3>
-<p>Attach the SIM card unlocker with the SIM card, then plug them into the iPhone. You can also visit &quot;https://www.youtube.com/watch?v=VXGp6hxhQs4&quot; for video guide.</p>
+<p>Attach the SIM card unlocker with the SIM card, then plug them into the iPhone. You can also visit &quot; https://www.youtube.com/watch?v=VXGp6hxhQs4 &quot; for video guide.</p>
 <h3 id="2-choose-a-good-mvno-to-fake">(2) Choose a good MVNO to fake</h3>
 <p>You can choose a T-mobile-based MVNO on the whitelist. However, you are not allowed to modify the APN after applying the whitelisted MVNO. Google Fi's APN is h2g2, but no carrier has the same APN in the whitelist. Luckily, I found most of the APNs in the MVNOs can be compatible with Fi. I recommend faking the carrier with APN &quot;wholesale&quot;, which is the default one for T-mobile MVNO. I give you the list example for all the whitelisted T-mobile MVNO carriers:</p>
 <table>
@@ -86,7 +86,7 @@
 </table>
 <h3 id="3-set-up-the-unlocker-to-iphone">(3) Set up the unlocker to iPhone</h3>
 <p>The unlocker program will automatically start. First click “Set IMSI Manual Unlock” -&gt; “input imsi”. In the input box, type the IMSI &quot;3102609&quot; and click “send”. Then in the GID1, input one value that you choose in the list. Then, also click send and do not input in the GID2 and click send, at last, the settings are configured, and click “accept” in the last window.<br>
-<img src="https://wasdwasd0105.github.io/post-images/1640357508740.png" alt="" loading="lazy"></p>
+<img src="https://wasdwasd0105.github.io/post-images/1640359694133.png" alt="" loading="lazy"></p>
 <h3 id="optional-for-v139">(Optional) for V1.39</h3>
 <p>If you use &quot;Heicard&quot; with 1.39, there is an extra step to set up. Go to Settings APP -&gt; &quot;Cellular&quot; -&gt; &quot;SIM applications&quot;, then choose &quot;fix 4G hotspot&quot; then input &quot;3102609&quot; and send.</p>
 ]]></content>
